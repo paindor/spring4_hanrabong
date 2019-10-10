@@ -17,28 +17,28 @@ public class EmpServiceImpl implements EmpService{
 	@Override
 	public EmpBean login(EmpBean eb) {
 		
-		return EmpDaoImpl.getInstance().login(eb);
+		return null;
 	}
 
 	@Override
 	public Boolean join(EmpBean eb) {
 		
-		return EmpDaoImpl.getInstance().insetEmp(eb);
+		return null;
 	}
 
 	@Override
 	public List<DeptBean> findDept() {
-		return  EmpDaoImpl.getInstance().selectDept();
+		return  null;
 	}
 
 	@Override
 	public List<EmpBean> findEmps() {
-		return EmpDaoImpl.getInstance().selectEmps();
+		return null;
 	}
 
 	@Override
 	public EmpBean findEmp(EmpBean eb) {
-		return EmpDaoImpl.getInstance().selectEmp(eb);
+		return null;
 	}
 
 }
