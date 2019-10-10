@@ -23,7 +23,7 @@ public class EmpServiceImpl implements EmpService{
 	@Override
 	public Boolean join(EmpBean eb) {
 		
-		return null;      ;;
+		return null;      
 	}
 
 	@Override
