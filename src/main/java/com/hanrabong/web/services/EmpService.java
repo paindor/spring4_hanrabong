@@ -4,18 +4,20 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.hanrabong.web.domains.DeptBean;
-import com.hanrabong.web.domains.EmpBean;
+import org.springframework.stereotype.Component;
+
+import com.hanrabong.web.domains.DeptDTO;
+import com.hanrabong.web.domains.EmpDTO;
 
 
-
+@Component
 public interface EmpService {
 	
-	public EmpBean login(EmpBean eb);
-	public Boolean join(EmpBean eb);
+	public EmpDTO login(EmpDTO eb);
+	public Boolean join(EmpDTO eb);
 
-	public List<DeptBean> findDept();	
-	public List<EmpBean> findEmps();	
-	public EmpBean findEmp(EmpBean eb);	
+	public List<DeptDTO> findDept();	
+	public List<EmpDTO> findEmps();	
+	public EmpDTO findEmp(EmpDTO eb);	
 	
 }

@@ -2,42 +2,43 @@ package com.hanrabong.web.seviceImpls;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import com.hanrabong.web.domains.DeptBean;
-import com.hanrabong.web.domains.EmpBean;
+import com.hanrabong.web.domains.DeptDTO;
+import com.hanrabong.web.domains.EmpDTO;
+import com.hanrabong.web.mappers.EmpMapper;
 import com.hanrabong.web.services.EmpService;
-
+@Service
 public class EmpServiceImpl implements EmpService{
 
-	private static EmpServiceImpl instance = new EmpServiceImpl();
-	private EmpServiceImpl () {}
-	public static EmpServiceImpl getInstance() {return instance;}
+	@Autowired EmpMapper mapper;
 	
 	
 	@Override
-	public EmpBean login(EmpBean eb) {
+	public EmpDTO login(EmpDTO eb) {
 		        
 		return null;
 	}
 
 	@Override
-	public Boolean join(EmpBean eb) {
+	public Boolean join(EmpDTO eb) {
 		
 		return null;      
 	}
 
 	@Override
-	public List<DeptBean> findDept() {
+	public List<DeptDTO> findDept() {
 		return  null;
 	}
 
 	@Override
-	public List<EmpBean> findEmps() {
+	public List<EmpDTO> findEmps() {
 		return null;
 	}
 
 	@Override
-	public EmpBean findEmp(EmpBean eb) {
+	public EmpDTO findEmp(EmpDTO eb) {
 		return null;
 	}
 
