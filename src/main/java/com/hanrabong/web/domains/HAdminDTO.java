@@ -8,10 +8,10 @@ import lombok.Data;
 
 
 @Data @Component
-public class DeptDTO implements Serializable{
+public class HAdminDTO implements Serializable{
 	private static final long serialVersionUID= 1L;
 	
-	private String deptNo, dName, loc;
+	private String anum, aid, apw, aname, authority, part;
 	
 	
 }

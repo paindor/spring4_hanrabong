@@ -4,19 +4,20 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.hanrabong.web.domains.DeptDTO;
-import com.hanrabong.web.domains.EmpDTO;
+import com.hanrabong.web.domains.HAdminDTO;
+import com.hanrabong.web.domains.HCustDTO;
 
 @Repository
 public interface EmpMapper {
 
-	public EmpDTO login(EmpDTO eb);
-	public Boolean insetEmp(EmpDTO eb);
+	public HCustDTO login(HCustDTO eb);
+	public Boolean insetEmp(HCustDTO eb);
 
-	public List<DeptDTO> selectDept();	
-	public List<EmpDTO> selectEmps();	
-	public EmpDTO selectEmp(EmpDTO eb);	
+	public List<HAdminDTO> selectDept();	
+	public List<HCustDTO> selectEmps();	
+	public HCustDTO selectEmp(HCustDTO eb);	
 	
+	public int countEmp();
 	
 	
 }
