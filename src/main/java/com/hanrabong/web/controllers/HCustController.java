@@ -27,7 +27,7 @@ public class HCustController {
 	
 	
 	@PostMapping("/join")
-	public @ResponseBody Map<?,?> join(@RequestBody HCustDTO hcust) {
+	public @ResponseBody Map<?,?> login(@RequestBody HCustDTO hcust) {
 		
 		//logger.info("ajax 가 보낸아이디 와 비번 {}" , hcust.getCid() + ","+ hcust.getCpw());
 		HashMap<String, String> map = new HashMap<>();
