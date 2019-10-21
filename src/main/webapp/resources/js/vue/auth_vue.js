@@ -136,8 +136,8 @@ auth_vue ={
         '          </div>'+
         '        </div>'+
         '        <div class="mb-3">'+
-        '          <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>'+
-        '          <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">'+
+        '          <label for="address2">Number <span class="text-muted">(Optional)</span></label>'+
+        '          <input type="text" class="form-control" id="cnum" placeholder="Apartment or suite">'+
         '        </div>'+
         '        <div class="row">'+
         '          <div class="col-md-5 mb-3">'+
@@ -287,9 +287,9 @@ auth_vue ={
 		'    <img class="mb-4" src="'+x.img+'/bootstrap-logo.png" alt="" width="72" height="72">'+
 		'    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>'+
 		'    <label for="inputEmail" class="sr-only">Email address</label>'+
-		'    <input type="text" id="uid" class="form-control" placeholder="Email address" required="" autofocus="">'+
+		'    <input type="text" id="cid" class="form-control" placeholder="Email address" required="" autofocus="">'+
 		'    <label for="inputPassword" class="sr-only">Password</label>'+
-		'    <input type="password" id="pwd" class="form-control" placeholder="Password" required="">'+
+		'    <input type="password" id="cpw" class="form-control" placeholder="Password" required="">'+
 		'    <div class="checkbox mb-3">'+
 		'      <label>'+
 		'       <a id="a_go_join" href="#">go join</a>'+
@@ -305,7 +305,64 @@ auth_vue ={
 	},
 	mypage_form: ()=>{
 		return '';
-	} 
+	},
+	mypage_head: (x)=>{
+		return '<head>'+
+		'    <meta charset="utf-8">'+
+		'    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">'+
+		'    <meta name="description" content="">'+
+		'    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">'+
+		'    <meta name="generator" content="Jekyll v3.8.5">'+
+		'    <title>Sticky Footer Template · Bootstrap</title>'+
+		
+		+ '   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sticky-footer/">'+
+		
+		+ '   <!-- Bootstrap core CSS -->'+
+		'<link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">'+
+		
+		
+		+  '   <style>'+
+		'      .bd-placeholder-img {'+
+		'        font-size: 1.125rem;'+
+		'        text-anchor: middle;'+
+		'        -webkit-user-select: none;'+
+		'        -moz-user-select: none;'+
+		'        -ms-user-select: none;'+
+		'        user-select: none;'+
+		'   }'+
+		
+		+    '  @media (min-width: 768px) {'+
+		'        .bd-placeholder-img-lg {'+
+		'          font-size: 3.5rem;'+
+		'        }'+
+		'      }'+
+		'    </style>'+
+		'    <!-- Custom styles for this template -->'+
+		'    <link href="sticky-footer.css" rel="stylesheet">'+
+		'  </head>';
+	},
+	mypage_body:(x)=>{
+		return '<body class="d-flex flex-column h-100">'+
+		'    <!-- Begin page content -->'+
+		'<main role="main" class="flex-shrink-0">'+
+		'  <div class="container">'+
+		'    <h1 class="mt-5">My  Page</h1>'+
+		'    <p class="lead"> 아이디:  '+x.cid+'"</p>'+
+		'    <p><a href="/docs/4.3/examples/sticky-footer-navbar/"></p>'+
+		'  </div>'+
+		'</main>'+
+		
+		+ '<footer class="footer mt-auto py-3">'+
+		'  <div class="container">'+
+		'    <span class="text-muted"> 비밀번호: ' + x.cpw + '</span>'+
+		'  </div>'+
+		'</footer>'+
+		
+		+
+		''+ '</body>';
+		
+	}
+	
 	
 }
 

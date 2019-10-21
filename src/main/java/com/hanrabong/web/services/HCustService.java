@@ -14,7 +14,7 @@ import com.hanrabong.web.domains.HCustDTO;
 public interface HCustService {
 	
 	public HCustDTO login(HCustDTO eb);
-	public Boolean join(HCustDTO eb);
+	public void join(HCustDTO eb);
 
 	public List<HAdminDTO> findDept();	
 	public List<HCustDTO> findEmps();	

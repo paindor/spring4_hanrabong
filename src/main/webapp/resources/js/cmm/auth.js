@@ -36,7 +36,8 @@ auth =(() =>{
 				href: '#' ,
 				click : e=>{
 					e.preventDefault();
-					let data = {cid : $('#cid').val() , cpw : $('#cpw').val()};
+					let data = {cid : $('#cid').val() , cpw : $('#cpw').val(),
+							 cnum :$('#cnum').val()};
 					alert('id?')
 					$.ajax({
 						url : _+'/hcust/join',
@@ -49,7 +50,8 @@ auth =(() =>{
 							login()
 						},
 						error : e => {
-							alert('ajax실패');
+							alert('ajax실패' );
+							
 						}
 					})
 				}
@@ -67,19 +69,30 @@ auth =(() =>{
 		$('body')
 		.html(auth_vue.login_body(x));
 		$('<button>', {
-			type :"submit",
+			//type :"submit",
 			text : "sign in",
 	
 			click : e =>{
 				e.preventDefault();
-				let idpw = {cid:$('#uid').val() , cpw:$('#pwd').val()};
+				let idpw = {cid:$('#cid').val() , cpw:$('#cpw').val()};
 				alert('성공');
 				$.ajax({
-					url : _+'/hcust/join',
+					url : _+'/hcust/login',
 					type:'POST',
 					dataType:'json',
 					data: JSON.stringify(idpw),
-					contentType:'application/json'
+					contentType:'application/json',
+					success : d =>{
+						alert(d.cname+'님 환영합니다')
+						
+						mypage(d)
+						
+					},
+					error : e =>{
+						alert('ajax실패')
+						
+						
+					}
 						
 				})
 				
@@ -90,8 +103,18 @@ auth =(() =>{
 		.addClass("btn btn-lg btn-primary btn-block")
 		.appendTo('#btn_login')
 	}
+	let mypage=(data)=>{
+		let x = {css:$.css() , img:$.img(), cid:data.cid, cpw: data.cpw  }
+		alert(x.cid);
+		$('head').html(auth_vue.mypage_head(x))
+		$('body').html(auth_vue.mypage_body(x))
 		
-		return {onCreate ,join, login};
+		
+		
+		
+	}
+		
+		return {onCreate ,join, login ,mypage};
 	
 	
 })();

@@ -8,23 +8,24 @@ import org.springframework.stereotype.Service;
 import com.hanrabong.web.domains.HAdminDTO;
 import com.hanrabong.web.domains.HCustDTO;
 import com.hanrabong.web.mappers.EmpMapper;
+import com.hanrabong.web.mappers.HCustMapper;
 import com.hanrabong.web.services.HCustService;
 @Service
 public class HCustServiceImpl implements HCustService{
 
-	@Autowired EmpMapper empMapper;
+	@Autowired HCustMapper custMapper;
 	
 	
 	@Override
-	public HCustDTO login(HCustDTO eb) {
+	public HCustDTO login(HCustDTO param) {
 		        
-		return null;
+		return custMapper.selectCustById(param) ;
 	}
 
 	@Override
-	public Boolean join(HCustDTO eb) {
+	public void join(HCustDTO param) {
 		
-		return null;      
+		custMapper.insertUser(param);    
 	}
 
 	@Override
